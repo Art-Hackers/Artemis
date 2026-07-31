@@ -1,4 +1,4 @@
-// A normal test file
+// Test Python version
 #include <stdio.h>
 #include <stdlib.h>
 
