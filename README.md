@@ -1,6 +1,6 @@
 # Artemis
 
-Artemis is a lightweight, opinionated layer on top of [Flet](https://flet.dev) for building Android and desktop apps in Python with less boilerplate. If you are already comfortable writing Python and want to ship native-feeling applications without switching stacks, this project is designed to feel familiar.
+Artemis is a lightweight library for building Android and desktop apps in Python with less boilerplate. If you are already comfortable writing Python and want to ship native-feeling applications without switching stacks, this project is designed to feel familiar.
 
 The goal is simple: give you a compact API for the parts of app development that tend to repeat in every project—routing, app shell behavior, state updates, dialogs, themed widgets, and navigation—while still letting you drop down to Flet when you need more control.
 
