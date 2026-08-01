@@ -1,3 +1,5 @@
+<img width="1254" height="1254" alt="Artemis" src="https://github.com/user-attachments/assets/365a5d59-dc3c-42e1-8a1b-0bee7962287e" />
+
 # Artemis
 
 Artemis is a lightweight library for building Android and desktop apps in Python with less boilerplate. If you are already comfortable writing Python and want to ship native-feeling applications without switching stacks, this project is designed to feel familiar.
