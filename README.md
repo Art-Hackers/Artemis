@@ -6,6 +6,11 @@ Artemis is a lightweight library for building Android and desktop apps in Python
 
 The goal is simple: give you a compact API for the parts of app development that tend to repeat in every project—routing, app shell behavior, state updates, dialogs, themed widgets, and navigation—while still letting you drop down to Flet when you need more control.
 
+## Logo
+
+<img width="512" height="512" alt="logo" src="https://github.com/user-attachments/assets/6783d917-cea5-4d4f-bfe1-9c8cd5853e97" />
+
+
 ```python
 import artemis as art
 
