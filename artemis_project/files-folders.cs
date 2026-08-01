@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 
 class Program
 {
@@ -10,39 +11,52 @@ class Program
         Console.WriteLine($"Current Folder: {currentPath}");
         Console.WriteLine();
         
-        string[] files = Directory.GetFiles(currentPath);
-        string[] directories = Directory.GetDirectories(currentPath);
+        var files = Directory.GetFiles(currentPath);
+        var folders = Directory.GetDirectories(currentPath);
         
-        Console.WriteLine("FILES:");
-        if (files.Length == 0)
+        Console.WriteLine($"FOLDERS ({folders.Length}):");
+        if (folders.Length > 0)
         {
-            Console.WriteLine("  (No files)");
+            foreach (string folder in folders)
+            {
+                DirectoryInfo dirInfo = new DirectoryInfo(folder);
+                Console.WriteLine($"  {Path.GetFileName(folder)}");
+                Console.WriteLine($"    Created: {dirInfo.CreationTime}");
+                Console.WriteLine($"    Modified: {dirInfo.LastWriteTime}");
+                Console.WriteLine();
+            }
         }
         else
+        {
+            Console.WriteLine("  (No folders)");
+            Console.WriteLine();
+        }
+        
+        Console.WriteLine($"FILES ({files.Length}):");
+        if (files.Length > 0)
         {
             foreach (string file in files)
             {
-                FileInfo info = new FileInfo(file);
-                Console.WriteLine($"  {Path.GetFileName(file)} ({info.Length} bytes)");
+                FileInfo fileInfo = new FileInfo(file);
+                Console.WriteLine($"  {Path.GetFileName(file)}");
+                Console.WriteLine($"    Size: {fileInfo.Length} bytes");
+                Console.WriteLine($"    Created: {fileInfo.CreationTime}");
+                Console.WriteLine($"    Modified: {fileInfo.LastWriteTime}");
+                Console.WriteLine();
             }
-        }
-        
-        Console.WriteLine();
-        Console.WriteLine("FOLDERS:");
-        if (directories.Length == 0)
-        {
-            Console.WriteLine("  (No folders)");
         }
         else
         {
-            foreach (string dir in directories)
-            {
-                Console.WriteLine($"  {Path.GetFileName(dir)}");
-            }
+            Console.WriteLine("  (No files)");
+            Console.WriteLine();
         }
         
-        Console.WriteLine();
-        Console.WriteLine($"Total: {files.Length} files, {directories.Length} folders");
+        long totalSize = files.Sum(f => new FileInfo(f).Length);
+        Console.WriteLine($"SUMMARY:");
+        Console.WriteLine($"  Total Folders: {folders.Length}");
+        Console.WriteLine($"  Total Files: {files.Length}");
+        Console.WriteLine($"  Total Size: {totalSize} bytes");
+        
         Console.WriteLine();
         Console.WriteLine("Press any key to exit...");
         Console.ReadKey();
