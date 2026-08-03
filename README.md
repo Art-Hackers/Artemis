@@ -1,4 +1,5 @@
-<img width="1254" height="1254" alt="Artemis" src="https://github.com/user-attachments/assets/365a5d59-dc3c-42e1-8a1b-0bee7962287e" />
+<img width="1774" height="887" alt="ChatGPT Image Aug 3, 2026, 05_25_07 PM" src="https://github.com/user-attachments/assets/e51a9691-2ca6-4332-beb8-b3b6a871e135" />
+
 
 # Artemis
 
