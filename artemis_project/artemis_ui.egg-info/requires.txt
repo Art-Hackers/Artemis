@@ -1,0 +1,7 @@
+flet>=0.86.0
+
+[charts]
+flet-charts
+
+[icons]
+pillow
