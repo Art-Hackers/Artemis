@@ -12,13 +12,11 @@
 
 - **Must know** the Flet library.
 
-*------------------------------ Thanks for Reading ------------------------------*
-
 **ART HACKERS**
 
 <img width="128" height="128" alt="ChatGPT Image Jul 28, 2026, 08_40_41 PM" src="https://github.com/user-attachments/assets/07a8b96d-9a74-4a31-8b35-df7653876f6a" />
 
 
-
+**------------------------------------------------------------------ Thanks for Reading ------------------------------------------------------------------**
 
                                        
