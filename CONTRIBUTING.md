@@ -1,3 +1,6 @@
+**ART HACKERS**
+<img width="128" height="128" alt="ChatGPT Image Jul 28, 2026, 08_40_41 PM" src="https://github.com/user-attachments/assets/07a8b96d-9a74-4a31-8b35-df7653876f6a" />
+
 # Contribute to Artemis!
 
 - If you want to contribute to this project, simply create a PR titled "CONTRIBUTE to Artemis: YourGitHubUsernameHere".
@@ -11,11 +14,6 @@
 - Active development on GitHub and your repository.
 
 - **Must know** the Flet library.
-
-**ART HACKERS**
-
-<img width="128" height="128" alt="ChatGPT Image Jul 28, 2026, 08_40_41 PM" src="https://github.com/user-attachments/assets/07a8b96d-9a74-4a31-8b35-df7653876f6a" />
-
 
 **------------------------------------------------------------------ Thanks for Reading ------------------------------------------------------------------**
 
