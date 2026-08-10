@@ -52,11 +52,11 @@ pip install -e .
 python main.py
 ```
 
-`artemis new` sets up a working starter app, and a GitHub Actions workflow that builds your app for Android, iOS, Windows, macOS, Linux, and Web the moment you push — so producing a real install-able app on every platform never requires setting up Flutter, the Android SDK, or Xcode on your own machine. See [Building & CI/CD](docs/12-building-and-ci.md).
+`artemis new` sets up a working starter app, and a GitHub Actions workflow that builds your app for Android, iOS, Windows, macOS, Linux, and Web the moment you push — so producing a real install-able app on every platform never requires setting up Flutter, the Android SDK, or Xcode on your own machine.
 
 ## What you get
 
-**Theming.** 31 named color palettes, or full manual control over background/surface/text/accent colors — each one Material 3-correct in both light and dark mode automatically
+**Theming.** 31 named color palettes, or full manual control over background/surface/text/accent colors — each one Material 3-correct in both light and dark mode automatically.
 
 ```python
 art.App("My App", theme="sunset")
