@@ -56,7 +56,7 @@ python main.py
 
 ## What you get
 
-**Theming.** 31 named color palettes, or full manual control over background/surface/text/accent colors — each one Material 3-correct in both light and dark mode automatically.
+**Theming.** 31 named color palettes, or full manual control over background/surface/text/accent colors — each one Material 3-correct in both light and dark mode automatically
 
 ```python
 art.App("My App", theme="sunset")
