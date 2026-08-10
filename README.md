@@ -4,9 +4,9 @@
 
 **Build Android, iOS, desktop, and web apps in Python — with almost none of the boilerplate.**
 
-<img width="1024" height="1024" alt="logo" src="https://github.com/user-attachments/assets/48644fd9-2f95-4ddd-87ea-e736538901dd" />
-
 Artemis is a batteries-included layer on top of [Flet](https://flet.dev) (Flutter, for Python). Flet gives you the raw building blocks; Artemis gives you the everyday app-shell parts — theming, navigation, forms, state, dialogs, testing — as a small set of plain functions instead of something you assemble by hand in every new project.
+
+<img width="256" height="256" alt="logo" src="https://github.com/user-attachments/assets/48644fd9-2f95-4ddd-87ea-e736538901dd" />
 
 ```python
 import artemis as art
