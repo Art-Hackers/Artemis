@@ -7,7 +7,7 @@ Artemis, provided by Art-Hackers is a batteries-included layer on top of [Flet](
 **View it on [Pypi](https://pypi.org/project/artemis-ui/)**
 
 **The Command to get started**
-```Bash
+```shell
 pip install artemis-ui
 ```
 ## Example
