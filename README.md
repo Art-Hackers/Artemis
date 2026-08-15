@@ -57,7 +57,7 @@ pip install -e .
 python main.py
 ```
 
-`artemis new` sets up a working starter app, and a GitHub Actions workflow that builds your app for Android, iOS, Windows, macOS, Linux, and Web the moment you push — so producing a real install-able app on every platform never requires setting up Flutter, the Android SDK, or Xcode on your own machine. See [Building & CI/CD](docs/12-building-and-ci.md).
+`artemis new` sets up a working starter app, and a GitHub Actions workflow that builds your app for Android, iOS, Windows, macOS, Linux, and Web the moment you push — so producing a real install-able app on every platform never requires setting up Flutter, the Android SDK, or Xcode on your own machine.
 
 ## What you get
 
