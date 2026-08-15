@@ -4,6 +4,8 @@
 
 Artemis, provided by Art-Hackers is a batteries-included layer on top of [Flet](https://flet.dev) (Flutter, for Python). Flet gives you the raw building blocks; Artemis gives you the everyday app-shell parts — theming, navigation, forms, state, dialogs, testing — as a small set of plain functions instead of something you assemble by hand in every new project.
 
+View it on [Pypi](https://pypi.org/project/artemis-ui/)
+
 ```python
 import artemis as art
 
