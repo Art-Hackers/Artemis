@@ -4,94 +4,85 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Artemis — Build apps in Python</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <meta name="description" content="Artemis — Build Android, iOS, desktop, and web apps in Python with almost no boilerplate." />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="canvas">
-    <!-- decorative blobs -->
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-    <svg class="noise" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true"><filter id="grain"><feTurbulence baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="800" height="400" filter="url(#grain)"/></svg>
-  </div>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
 
-  <main class="frame">
-    <header class="header">
+  <main class="site">
+    <nav class="topbar">
       <div class="brand">
-        <div class="logo">A</div>
-        <div class="names">
-          <div class="proj">Artemis</div>
-          <div class="org">by Art-Hackers</div>
-        </div>
+        <div class="logo-neon">A</div>
+        <div class="meta"><div class="name">Artemis</div><div class="by">Art‑Hackers</div></div>
       </div>
-      <nav class="nav">
+      <div class="links">
         <a href="https://pypi.org/project/artemis-ui/" target="_blank" rel="noopener">PyPI</a>
         <a href="https://github.com/Art-Hackers/Artemis-Docs" target="_blank" rel="noopener">Docs</a>
         <a href="#examples">Examples</a>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
     <section class="hero">
-      <h1 class="title">Build beautiful cross‑platform apps in Python — with almost no boilerplate</h1>
-      <p class="subtitle">Artemis builds on Flet/Flutter and gives you polished theming, navigation, forms, state, dialogs, testing, and more — one-liners instead of plumbing.</p>
+      <div class="hero-left">
+        <h1 class="glow-title" data-text="Build apps in Python — fast">Build apps in Python — fast</h1>
+        <p class="tagline">Android, iOS, desktop, and web — real native apps using Python + Flet, wrapped in a tiny ergonomics layer.</p>
 
-      <div class="controls">
-        <button class="cta" id="install-btn" title="Copy pip command">pip install artemis-ui</button>
-        <a class="cta ghost" href="https://github.com/Art-Hackers/Artemis-Docs" target="_blank" rel="noopener">Read docs</a>
-      </div>
-
-      <div class="stats">
-        <div class="statcard">
-          <div class="stat-title">Installs (last 30 days)</div>
-          <div class="stat-num" id="installs">—</div>
-          <div class="stat-meta">Source: pepy.tech</div>
+        <div class="actions">
+          <button id="copyBtn" class="btn neon">pip install artemis-ui</button>
+          <a class="btn ghost" href="https://github.com/Art-Hackers/Artemis-Docs" target="_blank" rel="noopener">Open Docs</a>
         </div>
 
-        <div class="statcard small">
-          <div class="stat-title">PyPI</div>
-          <div class="stat-num">artemis-ui</div>
-          <div class="stat-meta">pip package</div>
-        </div>
+        <div class="small-note">Use <code>artemis new "My App"</code> to scaffold and auto-deploy CI for all platforms.</div>
       </div>
 
-      <pre class="code"><code>pip install artemis-ui
+      <div class="hero-right">
+        <div class="glass-card">
+          <svg viewBox="0 0 200 200" class="ring" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#7C5CFF"/>
+                <stop offset="1" stop-color="#00FFE0"/>
+              </linearGradient>
+              <filter id="blurGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <circle cx="100" cy="100" r="74" stroke="rgba(255,255,255,0.04)" stroke-width="12" fill="none"/>
+            <circle cx="100" cy="100" r="74" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"
+                    stroke-dasharray="0 470" stroke-dashoffset="0" class="arc"/>
+          </svg>
 
-import artemis as art
+          <div class="counter-wrap">
+            <div class="counter-label">Installs (30d)</div>
+            <div id="counter" class="counter">—</div>
+            <div id="counter-sub" class="counter-sub">fetching…</div>
+          </div>
+        </div>
+
+        <pre class="mini-code"><code>import artemis as art
 
 app = art.App("Hello", theme="ocean")
-@app.page("/") def home(p): return art.Column([art.Title("Hello"), art.Button("Say hi", on_click=lambda e: app.toast("Hi!"))], center=True)
+@app.page("/") def home(p): return art.Column([art.Title("Hello"), art.Button("Say hi", on_click=lambda e: app.toast("Hi!"))])
 app.run()</code></pre>
-
+      </div>
     </section>
 
     <section id="examples" class="features">
-      <h2 class="section-title">What Artemis gives you</h2>
-      <div class="grid">
-        <article class="feature">
-          <h3>Theming</h3>
-          <p>31 named color palettes, automatic light/dark, and manual color control — Material 3 correct.</p>
-        </article>
-        <article class="feature">
-          <h3>Navigation</h3>
-          <p>Real back-stack semantics, bottom tabs, route guards, and params — behaves like a native app.</p>
-        </article>
-        <article class="feature">
-          <h3>State & Forms</h3>
-          <p>Persistent and async state, fields with validation, and simple forms with one-line submit.</p>
-        </article>
-        <article class="feature">
-          <h3>Testing</h3>
-          <p>TestApp tooling to run clicks, navigation, dialogs, and assertions without opening windows.</p>
-        </article>
-      </div>
+      <h2>What Artemis gives you</h2>
+      <ul class="feature-list">
+        <li><strong>Theming</strong> — 31 palettes, Material 3-correct light/dark.</li>
+        <li><strong>Navigation</strong> — real back-stack, guards, and params.</li>
+        <li><strong>State & Forms</strong> — PersistentState, AsyncData, Field validation.</li>
+        <li><strong>Testing</strong> — TestApp: asserts without opening windows.</li>
+      </ul>
     </section>
 
     <footer class="footer">
-      <div>MIT • <a href="https://github.com/Art-Hackers/Artemis">Repo</a></div>
-      <div class="small">Prototype: installs fetched from pepy.tech API. Want this in the repo? I can push it.</div>
+      <div>MIT • <a href="https://github.com/Art-Hackers/Artemis" target="_blank" rel="noopener">Repo</a></div>
+      <div class="hint">Installs powered by pepy.tech • fallback to <code>./stats/installs.json</code></div>
     </footer>
   </main>
 
