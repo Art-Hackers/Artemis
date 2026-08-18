@@ -1,301 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artemis · Python GUI Library</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    /* --- Modern, clean, and technical aesthetic --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #0d1117;
-      color: #e6edf3;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 900px;
-      width: 100%;
-    }
-
-    /* --- Typography & Elements --- */
-    h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #58a6ff, #a371f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.25rem;
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-      color: #8b949e;
-      margin-bottom: 2rem;
-      border-left: 3px solid #a371f7;
-      padding-left: 1rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-top: 2.5rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #21262d;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-top: 1.75rem;
-      margin-bottom: 0.75rem;
-      color: #f0f6fc;
-    }
-
-    a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    code {
-      background-color: #161b22;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      font-size: 0.9em;
-      color: #f0883e;
-      border: 1px solid #30363d;
-    }
-
-    pre {
-      background-color: #161b22;
-      padding: 1.25rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.25rem 0;
-      border: 1px solid #30363d;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    pre code {
-      background-color: transparent;
-      padding: 0;
-      border: none;
-      color: #e6edf3;
-    }
-
-    ul, ol {
-      padding-left: 1.5rem;
-      margin: 0.75rem 0 1.25rem 0;
-    }
-
-    li {
-      margin-bottom: 0.3rem;
-    }
-
-    /* --- Components --- */
-    .badge-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-      align-items: center;
-    }
-
-    .badge {
-      background-color: #21262d;
-      padding: 0.3rem 0.9rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 450;
-      border: 1px solid #30363d;
-      color: #c9d1d9;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .badge .highlight {
-      color: #f0f6fc;
-      font-weight: 500;
-    }
-
-    .badge-img {
-      height: 20px;
-      vertical-align: middle;
-    }
-
-    .icon {
-      font-weight: 300;
-      color: #8b949e;
-      margin-right: 0.2rem;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1.25rem 0;
-    }
-
-    .feature-item {
-      background-color: #161b22;
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      border-left: 3px solid #a371f7;
-      font-size: 0.95rem;
-    }
-
-    .footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #21262d;
-      color: #8b949e;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    /* --- Responsive --- */
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      h1 { font-size: 2.2rem; }
-      .subtitle { font-size: 1rem; }
-      .feature-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artemis — Build apps in Python</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Artemis — Build Android, iOS, desktop, and web apps in Python with almost no boilerplate." />
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>Artemis</h1>
-      <div class="subtitle">
-        A stupidly easy way to build Android and desktop apps in Python.
+  <div class="canvas">
+    <!-- decorative blobs -->
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <svg class="noise" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true"><filter id="grain"><feTurbulence baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="800" height="400" filter="url(#grain)"/></svg>
+  </div>
+
+  <main class="frame">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div class="names">
+          <div class="proj">Artemis</div>
+          <div class="org">by Art-Hackers</div>
+        </div>
       </div>
-      <div class="badge-group">
-        <span class="badge"><span class="icon">›</span> Python 3.8+</span>
-        <span class="badge"><span class="icon">›</span> <span class="highlight">pip</span> install artemis-ui</span>
-        <!-- shields.io badge for install count -->
-        <span class="badge" style="padding: 0; background: transparent; border: none;">
-          <img 
-            src="https://img.shields.io/pypi/dm/artemis-ui?label=Installs&color=a371f7&style=flat-square" 
-            alt="PyPI Downloads"
-            class="badge-img"
-          >
-        </span>
-        <span class="badge"><span class="icon">›</span> v0.9.6</span>
-      </div>
+      <nav class="nav">
+        <a href="https://pypi.org/project/artemis-ui/" target="_blank" rel="noopener">PyPI</a>
+        <a href="https://github.com/Art-Hackers/Artemis-Docs" target="_blank" rel="noopener">Docs</a>
+        <a href="#examples">Examples</a>
+      </nav>
     </header>
 
-    <!-- Quick Start -->
-    <section>
-      <h2><span class="icon">›</span> Quick Start</h2>
-      <pre><code>import artemis as art
+    <section class="hero">
+      <h1 class="title">Build beautiful cross‑platform apps in Python — with almost no boilerplate</h1>
+      <p class="subtitle">Artemis builds on Flet/Flutter and gives you polished theming, navigation, forms, state, dialogs, testing, and more — one-liners instead of plumbing.</p>
+
+      <div class="controls">
+        <button class="cta" id="install-btn" title="Copy pip command">pip install artemis-ui</button>
+        <a class="cta ghost" href="https://github.com/Art-Hackers/Artemis-Docs" target="_blank" rel="noopener">Read docs</a>
+      </div>
+
+      <div class="stats">
+        <div class="statcard">
+          <div class="stat-title">Installs (last 30 days)</div>
+          <div class="stat-num" id="installs">—</div>
+          <div class="stat-meta">Source: pepy.tech</div>
+        </div>
+
+        <div class="statcard small">
+          <div class="stat-title">PyPI</div>
+          <div class="stat-num">artemis-ui</div>
+          <div class="stat-meta">pip package</div>
+        </div>
+      </div>
+
+      <pre class="code"><code>pip install artemis-ui
+
+import artemis as art
 
 app = art.App("Hello", theme="ocean")
-
-@app.page("/")
-def home(page):
-    return art.Column([
-        art.Title("Hello, Artemis!"),
-        art.Button("Say hi", on_click=lambda e: print("hi!")),
-    ], center=True)
-
+@app.page("/") def home(p): return art.Column([art.Title("Hello"), art.Button("Say hi", on_click=lambda e: app.toast("Hi!"))], center=True)
 app.run()</code></pre>
-      <p>Run it locally, then build for Android or desktop with Flet tooling underneath.</p>
+
     </section>
 
-    <!-- Key Features -->
-    <section>
-      <h2><span class="icon">›</span> Mental Model</h2>
-      <p>Artemis is intentionally small. The core concepts are:</p>
-      <div class="feature-grid">
-        <div class="feature-item"><strong>One App</strong> per application</div>
-        <div class="feature-item"><strong>@app.page("/route")</strong> for pages</div>
-        <div class="feature-item"><strong>art.State(...)</strong> for state management</div>
-        <div class="feature-item"><strong>Auto-redraw</strong> on state changes</div>
-        <div class="feature-item"><strong>Navigation</strong> with app.go()</div>
-        <div class="feature-item"><strong>Built-in themes</strong> (ocean, sunset, etc.)</div>
+    <section id="examples" class="features">
+      <h2 class="section-title">What Artemis gives you</h2>
+      <div class="grid">
+        <article class="feature">
+          <h3>Theming</h3>
+          <p>31 named color palettes, automatic light/dark, and manual color control — Material 3 correct.</p>
+        </article>
+        <article class="feature">
+          <h3>Navigation</h3>
+          <p>Real back-stack semantics, bottom tabs, route guards, and params — behaves like a native app.</p>
+        </article>
+        <article class="feature">
+          <h3>State & Forms</h3>
+          <p>Persistent and async state, fields with validation, and simple forms with one-line submit.</p>
+        </article>
+        <article class="feature">
+          <h3>Testing</h3>
+          <p>TestApp tooling to run clicks, navigation, dialogs, and assertions without opening windows.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Widgets & Helpers -->
-    <section>
-      <h2><span class="icon">›</span> Available Widgets</h2>
-      <p>Common UI building blocks, all wrapped for a Pythonic feel:</p>
-      <ul>
-        <li><code>Text</code>, <code>Title</code>, <code>Button</code>, <code>Input</code>, <code>Switch</code>, <code>Checkbox</code>, <code>Slider</code>, <code>Dropdown</code></li>
-        <li><code>Column</code>, <code>Row</code>, <code>Box</code>, <code>Card</code>, <code>Spacer</code>, <code>Divider</code>, <code>Image</code></li>
-        <li><code>BottomNav</code>, <code>ListTile</code>, <code>Avatar</code>, <code>Loader</code>, <code>ProgressBar</code></li>
-        <li><code>App</code>, <code>State</code>, <code>toast()</code>, <code>alert()</code>, and <code>confirm()</code></li>
-      </ul>
-      <p>If a control is not yet wrapped, you can still use Flet directly with <code>import flet</code> or <code>art.flet</code>.</p>
-    </section>
-
-    <!-- Examples -->
-    <section>
-      <h2><span class="icon">›</span> Examples</h2>
-      <p>Reference apps in the repository:</p>
-      <ul>
-        <li><code>examples/counter.py</code> — Simple state handling</li>
-        <li><code>examples/todo.py</code> — Dynamic lists and input binding</li>
-        <li><code>examples/showcase.py</code> — Navigation, glass panels, gradients</li>
-        <li><code>examples/contacts.py</code> — Lists, avatars, loaders, and dialogs</li>
-      </ul>
-    </section>
-
-    <!-- Build & Limitations -->
-    <section>
-      <h2><span class="icon">›</span> Build for Android &amp; Desktop</h2>
-      <p>Once your app is ready, use Flet's build commands:</p>
-      <pre><code>flet build apk      # Android
-flet build ipa       # iOS
-flet build macos     # macOS
-flet build windows   # Windows
-flet build linux     # Linux</code></pre>
-
-      <h2><span class="icon">›</span> Current Limitations</h2>
-      <ul>
-        <li>Page redraws happen on state-driven updates (simple and effective, but not ideal for very large datasets)</li>
-        <li>Routes are currently flat strings (e.g., <code>/</code> and <code>/settings</code>)</li>
-        <li>Bottom navigation is designed for a single tab level</li>
-        <li>Widget coverage is intentionally narrow and will grow over time</li>
-      </ul>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-      <p>
-        <a href="https://github.com/Art-Hackers/Artemis" target="_blank">GitHub Repository</a> ·
-        <a href="https://pypi.org/project/artemis-ui/" target="_blank">PyPI</a> ·
-        Built with Astro
-      </p>
-      <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-        Artemis is open-source and available under the MIT License.
-      </p>
+      <div>MIT • <a href="https://github.com/Art-Hackers/Artemis">Repo</a></div>
+      <div class="small">Prototype: installs fetched from pepy.tech API. Want this in the repo? I can push it.</div>
     </footer>
-  </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
