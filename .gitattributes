@@ -1,6 +1,6 @@
 *.md linguist-language=Markdown
 *.md linguist-detectable=true
 *.md linguist-documentation=false
-*.html linguist-language=JavaScript
-*.css linguist-language=JavaScript
-*.js linguist-language=JavaScript
+*.html linguist-language=TypeScript
+*.css linguist-language=TypeScript
+*.js linguist-language=C++
