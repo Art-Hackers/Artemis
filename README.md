@@ -1,5 +1,7 @@
 # Artemis
 
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/artemis-ui?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/artemis-ui)
+
 **Build Android, iOS, desktop, and web apps in Python — with almost none of the boilerplate.**
 
 Artemis, provided by Art-Hackers is a batteries-included layer on top of [Flet](https://flet.dev) (Flutter, for Python). Flet gives you the raw building blocks; Artemis gives you the everyday app-shell parts — theming, navigation, forms, state, dialogs, testing — as a small set of plain functions instead of something you assemble by hand in every new project.
