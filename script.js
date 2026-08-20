@@ -96,7 +96,7 @@ requestAnimationFrame(drawFrame);
 /* ---------------------------
    Installs counter (no arc)
    --------------------------- */
-const API = 'https://pepy.tech/api/v2/projects/artemis-ui';
+const API = 'https://pepy.tech/projects/artemis-ui';
 const counterEl = document.getElementById('counter');
 const counterSub = document.getElementById('counter-sub');
 
